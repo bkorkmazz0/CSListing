@@ -89,7 +89,6 @@ class ProductListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //deneme
         setupUI()
         loadJsonData()
     }
