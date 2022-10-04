@@ -1,24 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dvn-Ng-vye">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Product List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Product List View Controller" id="BYZ-38-t0r" customClass="ProductListViewController" customModule="CiceksepetiListingThirdTry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Anasayfa" image="cs-24" id="3Sw-qv-cNm"/>
+                    <navigationItem key="navigationItem" id="5G7-HW-XkD">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GRw-7u-yz1"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="KxM-Oj-Oyj" kind="show" identifier="ProductDetail" id="MQ7-Il-TbD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="5468.115942028986" y="89.732142857142847"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="gjS-0J-KUH">
+            <objects>
+                <viewController id="KxM-Oj-Oyj" customClass="ProductDetailViewController" customModule="CiceksepetiListingThirdTry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xs3-2c-gZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="S8D-Xl-xnT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="s1A-Wd-MST"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4o5-Xv-IYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6330.434782608696" y="89.732142857142847"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="dV0-if-l3t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eCp-gw-LSU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="1aV-Yc-dNY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="svK-Nc-sad">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oIr-lb-eBf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3sK-9b-wbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4557.971014492754" y="89.732142857142847"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QnF-PQ-hD9">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dvn-Ng-vye" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="gI4-I2-wrF">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eCp-gw-LSU" kind="relationship" relationship="viewControllers" id="yfp-du-lqW"/>
+                        <segue destination="Jzv-eM-o4c" kind="relationship" relationship="viewControllers" id="9cH-Pa-Pm4"/>
+                        <segue destination="FAK-uu-sZ8" kind="relationship" relationship="viewControllers" id="Qk5-vB-MGF"/>
+                        <segue destination="7WB-0K-YRw" kind="relationship" relationship="viewControllers" id="opL-U3-Un1"/>
+                        <segue destination="GkS-ju-ZGj" kind="relationship" relationship="viewControllers" id="rBg-ne-dKH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnf-97-Q3H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3647.826086956522" y="89.732142857142847"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="WIi-IF-aPz">
+            <objects>
+                <viewController title="Favorites" id="FAK-uu-sZ8" customClass="favoritesVC" customModule="CiceksepetiListingThirdTry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bHi-cJ-O3z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yoL-8R-AOf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorilerim" image="fav" selectedImage="fav" id="c18-aB-EOx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VFh-77-Lql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2981" y="856"/>
+        </scene>
+        <!--Category-->
+        <scene sceneID="fb5-De-Rra">
+            <objects>
+                <viewController title="Category" id="Jzv-eM-o4c" customClass="categoryVC" customModule="CiceksepetiListingThirdTry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w78-qt-qO4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="T9O-yo-VCW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Kategoriler" image="category" selectedImage="category" id="tRT-ld-BBR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsA-FL-ruJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3648" y="857"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="gSn-nD-N9w">
+            <objects>
+                <viewController title="Cart" id="7WB-0K-YRw" customClass="CartVC" customModule="CiceksepetiListingThirdTry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XOw-IX-ynq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KHv-h2-6g1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sepetim" image="cart" selectedImage="cart" id="j14-Jb-fWn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MQQ-gp-qhP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2323" y="856"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="FiO-va-Sqm">
+            <objects>
+                <viewController title="Account" id="GkS-ju-ZGj" customClass="accountVC" customModule="CiceksepetiListingThirdTry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KC3-m4-AO5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zwT-oa-TAx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hesabım" image="account" id="6LB-nH-4Bb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwR-DN-1WS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645" y="856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="account" width="24" height="24"/>
+        <image name="cart" width="24" height="24"/>
+        <image name="category" width="24" height="24"/>
+        <image name="cs-24" width="24" height="24"/>
+        <image name="fav" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
